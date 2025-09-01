@@ -1,0 +1,18 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Fabric dev runtime
+run/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Generated
+bin/**/bin
+**/build
+**/.gradle
+**/run
