@@ -1,6 +1,6 @@
-# Fabric AI Chat (Server-side)
+# AI Chat
 
-A lightweight Fabric server mod that lets players chat with an AI assistant. The AI can answer questions and, if enabled, request the server to run safe commands.
+A lightweight Fabric singleplayer or server mod that lets players chat with an AI assistant. The AI can answer questions and, if enabled, request the server to run safe commands.
 
 ## Features
 - /ai ask <message> — ask the AI; keeps short per-player history
@@ -30,8 +30,7 @@ Provider-specific:
 
 ## Usage and security
 - By default, commands are NOT executed (allowRunCommands=false)
-- If you enable commands, only allow safe prefixes via commandAllowlist
-- Commands are run on the server thread; when triggered by a player, the command runs "as" the player using `execute as <player> at @s run ...` so selectors like `@s` work
+- If enabled, whitelist commands via commandAllowlist
 
 ## Build
 Project uses Gradle with Fabric Loom.
@@ -44,5 +43,4 @@ The jar will be in `build/libs/`.
 
 ## Notes
 - Requires Java compatible with your Fabric/Minecraft target (see gradle.properties)
-- Logging is minimal and avoids leaking secrets; API keys should be provided via env vars or config (OpenAI)
 - Chat history is in-memory per-player only
