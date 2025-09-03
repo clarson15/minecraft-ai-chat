@@ -23,36 +23,36 @@ jobs:
           # Minecraft 1.21.8 (latest)
           - minecraft_version: '1.21.8'
             yarn_mappings: '1.21.8+build.1'
-            loader_version: '0.16.9'
-            fabric_version: '0.110.5+1.21.8'
+            loader_version: '0.17.2'
+            fabric_version: '0.133.0+1.21.8'
             minecraft_dependency: '>=1.21.8'
-            loader_dependency: '>=0.16.0'
+            loader_dependency: '>=0.15.0'
           # Minecraft 1.21.4
           - minecraft_version: '1.21.4'
             yarn_mappings: '1.21.4+build.2'
-            loader_version: '0.16.5'
-            fabric_version: '0.107.0+1.21.4'
+            loader_version: '0.17.2'
+            fabric_version: '0.119.4+1.21.4'
             minecraft_dependency: '>=1.21.4'
-            loader_dependency: '>=0.16.0'
+            loader_dependency: '>=0.15.0'
           # Minecraft 1.21.1 (current stable)
           - minecraft_version: '1.21.1'
             yarn_mappings: '1.21.1+build.1'
-            loader_version: '0.15.11'
-            fabric_version: '0.116.5+1.21.1'
+            loader_version: '0.17.2'
+            fabric_version: '0.116.6+1.21.1'
             minecraft_dependency: '>=1.21.1'
             loader_dependency: '>=0.15.0'
           # Minecraft 1.21
           - minecraft_version: '1.21'
             yarn_mappings: '1.21+build.9'
-            loader_version: '0.15.11'
-            fabric_version: '0.105.3+1.21'
+            loader_version: '0.17.2'
+            fabric_version: '0.105.6+1.21'
             minecraft_dependency: '>=1.21'
             loader_dependency: '>=0.15.0'
           # Minecraft 1.20.4 (LTS)
           - minecraft_version: '1.20.4'
             yarn_mappings: '1.20.4+build.3'
             loader_version: '0.15.11'
-            fabric_version: '0.96.4+1.20.4'
+            fabric_version: '0.97.3+1.20.4'
             minecraft_dependency: '>=1.20.4'
             loader_dependency: '>=0.15.0'
 
@@ -119,7 +119,7 @@ jobs:
         uses: Kir-Antipov/mc-publish@v3.3
         with:
           files-primary: ${{ steps.find_jar.outputs.jar }}
-          name: AI Chat ${{ matrix.minecraft_version }}
+          name: AI Chat ${{ steps.version.outputs.version }}-${{ matrix.minecraft_version }}
           version: ${{ steps.version.outputs.version }}
           loaders: fabric
           game-versions: ${{ matrix.minecraft_version }}
