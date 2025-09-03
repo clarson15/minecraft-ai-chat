@@ -49,10 +49,22 @@ dependencies {
 }
 
 processResources {
-	inputs.property "version", project.version
+	// Support parameterized dependencies for fabric.mod.json so CI can build a matrix
+	def mcDep = project.findProperty('minecraft_dependency') ?: ">=${project.minecraft_version}"
+	def loaderDep = project.findProperty('loader_dependency') ?: ">=${project.loader_version}"
+
+	inputs.properties([
+			version: project.version,
+			minecraft_dependency: mcDep,
+			loader_dependency: loaderDep
+	])
 
 	filesMatching("fabric.mod.json") {
-		expand "version": inputs.properties.version
+		expand([
+				version              : inputs.properties.version,
+				minecraft_dependency : inputs.properties.minecraft_dependency,
+				loader_dependency    : inputs.properties.loader_dependency
+		])
 	}
 }
 
