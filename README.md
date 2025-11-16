@@ -1,6 +1,6 @@
 # AI Chat
 
-A lightweight Fabric singleplayer or server mod that lets players chat with an AI assistant. The AI can answer questions and, if enabled, request the server to run safe commands.
+A lightweight Fabric singleplayer or server mod that lets players chat with an AI assistant. The AI can answer questions and, if enabled, request the server to run safe commands. The mod can be installed on [curseforge](https://www.curseforge.com/minecraft/mc-mods/ai-chat).
 
 ## Features
 - /ai ask <message> — ask the AI; keeps short per-player history
